@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Rat = function (name,weight,speed,status,sound) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.status = status;
+        this.sound = sound;
+        this.getName = function () {
+            return this.name;
+        };
+        this.setName = function (name) {
+            this.name = name;
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        };
+        this.getSpeed = function () {
+            return this.speed;
+        };
+        this.setSpeed = function (speed) {
+            this.Speed = speed;
+        };
+        this.getStatus = function () {
+            return this.status;
+        };
+        this.setStatus = function (status) {
+            this.status = status;
+        };
+        this.getSound = function () {
+            return this.sound;
+        };
+        this.setSound = function (sound) {
+            this.sound = sound;
+        };
+    }
+    let Cat = function (name,weight,maxSpeed,sound) {
+        this.name = name;
+        this.weight = weight;
+        this.maxSpeed = maxSpeed;
+        this.sound = sound;
+        this.getName = function () {
+            return this.name;
+        };
+        this.setName = function (name) {
+            this.name = name;
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        };
+        this.getMaxSpeed = function () {
+            return this.maxSpeed;
+        };
+        this.setMaxSpeed = function (maxSpeed) {
+            this.maxSpeed = maxSpeed;
+        };
+        this.getSound = function () {
+            return this.sound;
+        };
+        this.setSound = function (sound) {
+            this.sound = sound;
+        };
+        this.batChuot = function (rat) {
+            if (rat.speed<this.maxSpeed) {
+                return true;
+            } else
+                return false;
+        };
+        this.eatRat = function (rat) {
+            if (this.batChuot === true){
+                this.weight += rat.weight ;
+            } else return false ;
+
+        }
+    };
+    let rat1= new Rat(" chuột ", 50, 70 );
+    let cat1= new Cat(" Mèo ", 100,50 );
+    if (cat1.batChuot(rat1)) {
+        document.write(cat1.getName() + " bắt được " +rat1.getName());
+        cat1.eatRat(rat1)
+    }  else {
+        document.write(cat1.getName()+" không bắt được "+ rat1.getName());
+    }
+    document.write("<br>"+cat1.getWeight());
+</script>
+</body>
+</html>
